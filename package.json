@@ -23,9 +23,9 @@
     "expo-status-bar": "~2.0.1",
     "expo-system-ui": "~4.0.8",
     "expo-web-browser": "~14.0.2",
-    "react": "18.3.1",
+    "react": "^18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.76.7",
+    "react-native": "^0.76.7",
     "react-native-reanimated": "~3.16.1",
     "react-native-safe-area-context": "4.12.0",
     "react-native-screens": "~4.4.0",
@@ -39,5 +39,17 @@
     "react-test-renderer": "18.3.1",
     "typescript": "~5.3.3"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroMartes/Mobile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroMartes/Mobile/issues"
+  },
+  "homepage": "https://github.com/PedroMartes/Mobile#readme",
+  "description": ""
 }

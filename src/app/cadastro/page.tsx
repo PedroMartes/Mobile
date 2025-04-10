@@ -34,7 +34,7 @@ export default function CadastroPage() {
                             <Text style={styles.buttonText}>Enviar</Text>
                         </TouchableOpacity>
                     </Link>
-                    <Link href={"/cadastro/page"}><Text>Crie sua conta</Text></Link>
+                    <Link href={"/"}><Text>Entre em uma conta existente</Text></Link>
                 </View>
             </View>
         </ImageBackground >
