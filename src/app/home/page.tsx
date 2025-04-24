@@ -3,6 +3,11 @@ import { styles } from "./style"
 import { Link } from "expo-router";
 
 export default function Index() {
+
+    function fetchProdutos(){
+        fetch("http://")
+    }
+
     const MENU = [
         {
             id: 1,
