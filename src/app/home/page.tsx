@@ -1,12 +1,30 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, ImageSourcePropType } from "react-native";
 import { styles } from "./style"
 import { Link } from "expo-router";
+import { useEffect, useState } from "react";
+
+export type ProdutoType = {
+    id: number,
+    name: string,
+    price: number,
+    description: string,
+    imgUrl: ImageSourcePropType,
+    ingredients: string,
+}
 
 export default function Index() {
 
+    const [produtos, setProdutos] = useState<ProdutoType[]>()
+
     function fetchProdutos(){
-        fetch("http://")
+        fetch("http://localhost:3000/produto")
+        .then((response) => response.json())
+        .then(data => setProdutos(data))
     }
+
+    useEffect(() => {
+        fetchProdutos()
+    }, [])
 
     const MENU = [
         {
@@ -63,15 +81,15 @@ export default function Index() {
 
             <ScrollView>
                 {
-                    MENU.map((item) => (
-                        <Link href={"/produto/page"} asChild>
+                    produtos?.map((item) => (
+                        <Link href={`/produto/${item.id}`} asChild key={item.id}>
                             <TouchableOpacity style={styles.menuItem}>
                                 <View style={styles.menuContent}>
                                     <Text style={styles.itemName}>{item.name}</Text>
                                     <Text style={styles.itemDescription}>{item.description}</Text>
                                     <Text style={styles.itemPrice}>R$ {item.price}</Text>
                                 </View>
-                                <Image style={styles.itemImage} source={item.image} />
+                                <Image style={styles.itemImage} source={item.imgUrl} />
                             </TouchableOpacity>
                         </Link>
                     ))
